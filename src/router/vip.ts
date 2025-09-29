@@ -1,10 +1,12 @@
 //  会员
+import i18n from '../locales/index';
+
 const routes = [
   {
     path: '/vip/list',
     name: 'vipList',
     meta: {
-      title: '会员信息',
+      title: i18n.global.t('routes.vip.vipList'),
     },
     component: () => import('@/views/Todos.vue')
   }

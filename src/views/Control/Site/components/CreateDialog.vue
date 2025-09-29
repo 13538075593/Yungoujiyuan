@@ -16,12 +16,12 @@
             </el-col>
             <el-col :span="12">
               <el-form-item :label="$t('control.site.siteName')" prop="siteName">
-                <el-input v-model="ruleForm.siteName" type="text" clearable placeholder="请输入" />
+                <el-input v-model="ruleForm.siteName" type="text" clearable :placeholder="$t('common.pleaseInput')" />
               </el-form-item>
             </el-col>
             <el-col :span="12">
               <el-form-item :label="$t('control.site.code')" prop="code">
-                <el-input v-model="ruleForm.code" type="text" clearable placeholder="请输入" />
+                <el-input v-model="ruleForm.code" type="text" clearable :placeholder="$t('common.pleaseInput')" />
               </el-form-item>
             </el-col>
             <el-col :span="24">

@@ -49,17 +49,21 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  const pathExists = router.getRoutes().some(({ path }) => path === to.path);
-  console.log(pathExists);
-  if (pathExists) {
-    next();
-  } else {
-    const dynamicRoute = asyncRoutes.find(i => i.path === to.path);
-    if (dynamicRoute) {
-      router.addRoute(dynamicRoute);
-      next();
-    }
-  }
+  document.title = to.meta.title as string;
+  
+  // const pathExists = router.getRoutes().some(({ path }) => path === to.path);
+  // console.log(pathExists);
+  // if (pathExists) {
+  //   next();
+  // } else {
+  //   const dynamicRoute = asyncRoutes.find(i => i.path === to.path);
+  //   if (dynamicRoute) {
+  //     router.addRoute(dynamicRoute);
+  //     next();
+  //   }
+  // }
+
+  next();
 });
 
 export default router

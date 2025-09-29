@@ -1,4 +1,5 @@
 export default {
+  // 公共
   common: {
     indexNumber: '序号',
     site: '站点',
@@ -12,9 +13,25 @@ export default {
     operation: '操作',
     button: {
       confirm: '确认',
-      cancel: '取消'
+      cancel: '取消',
+      query: '查询',
+      reset: '重置',
+      create: '新增',
+      edit: '编辑'
     },
   },
+  // 路由title
+  routes: {
+    vip: {
+      vipList: '会员信息',
+    },
+    control: {
+      controlSite: '站点管理',
+      controlRole: '总控角色'
+    }
+  },
+
+  // 以下的都是页面
   login: {
     formHead: 'Super X',
     accountInputLabel: '账号',
@@ -54,6 +71,16 @@ export default {
       contactTelegram: '对接telegram账号名',
       contactGroupNumber: '对接群编号',
       accountAndPassword: '站点账号密码',
+    },
+    role: {
+      roleConditionLabel: '角色',
+      roleConditionPlaceholder: '请输入名称或ID',
+      roleName: '角色名称',
+      roleID: '角色ID',
+      createRole: '新增角色',
+      editRole: '编辑角色',
+      menuPermission: '菜单权限',
+      
     }
   }
 }
