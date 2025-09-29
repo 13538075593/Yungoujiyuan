@@ -1,11 +1,11 @@
 <template>
-  <div class="home">
+  <div class="home w-full h-full">
     <div class="hero">
-      <h1>Vue 3.5 + Pinia + TypeScript Demo</h1>
-      <p>这是一个展示 Vue 3.5、Pinia 状态管理、TypeScript 和 Vue Router 的演示项目</p>
+      <h1>Vue 3.5 + Pinia + TypeScript</h1>
+      <p> Vue 3.5、Pinia 状态管理、TypeScript 和 Vue Router</p>
     </div>
 
-    <div class="features">
+    <!-- <div class="features">
       <div class="feature-card">
         <h3>🚀 Vue 3.5</h3>
         <p>使用最新的 Vue 3.5 版本，体验 Composition API 的强大功能</p>
@@ -36,7 +36,7 @@
         <li>Vue Router - 路由管理</li>
         <li>Vite - 构建工具</li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -44,7 +44,7 @@
 import { onMounted } from 'vue'
 
 onMounted(() => {
-  console.log('首页组件已加载')
+  // console.log('首页组件已加载')
 })
 </script>
 
@@ -131,4 +131,5 @@ onMounted(() => {
   border-bottom: none;
 }
 </style>
+
 

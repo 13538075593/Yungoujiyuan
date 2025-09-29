@@ -1,0 +1,88 @@
+
+/** 盒模型 start **/
+.w-full { width: 100% !important; }
+.h-full { height: 100% !important; }
+
+// 边距、宽、高
+@for $i from 0 through 60 {
+  .pt-#{$i * 5} { padding-top: 5px * $i !important };
+  .pr-#{$i * 5} { padding-right: 5px * $i !important };
+  .pb-#{$i * 5} { padding-bottom: 5px * $i !important };
+  .pl-#{$i * 5} { padding-left: 5px * $i !important };
+
+  .mt-#{$i * 5} { margin-top: 5px * $i !important };
+  .mr-#{$i * 5} { margin-right: 5px * $i !important };
+  .mb-#{$i * 5} { margin-bottom: 5px * $i !important };
+  .ml-#{$i * 5} { margin-left: 5px * $i !important };
+
+  .w-#{$i * 5} { width: 5px * $i !important };
+  .h-#{$i * 5} { height: 5px * $i !important };
+  .min-width-#{$i * 5} { min-width: 5px * $i !important };
+  .min-height-#{$i * 5} { min-height: 5px * $i !important };
+}
+/** 盒模型 end **/
+
+
+
+/** 文字相关 start **/
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+.bold { font-weight: bold !important; }
+.color-white { color: #fff !important; }
+.no-wrap, .nowrap { white-space: nowrap !important; }
+
+// 字号
+@for $i from 12 through 50 {
+  .fs-#{$i} { font-size: 1px * $i !important; };
+}
+/** 文字相关 end **/
+
+
+
+/** 布局 start **/
+.display-flex { display: flex !important; }
+.flex-column { display: flex !important; flex-direction: column !important; }
+.flex-middle { display: flex !important; align-items: center !important; }
+.flex-center { display: flex !important; align-items: center !important; justify-content: center !important;}
+.flex-1 { flex: 1 !important; }
+.flex-2 { flex: 2 !important; }
+.flex-3 { flex: 3 !important; }
+.flex-4 { flex: 4 !important; }
+.flex-5 { flex: 5 !important; }
+/** 布局 end **/
+
+
+
+/** 其它 start **/
+.hide { display: none !important; }
+.bg-white { background-color: #fff !important; }
+.ovh { overflow: hidden !important; }
+.overflow-auto { overflow: auto !important; }
+.curp { cursor: pointer !important; }
+.psr { position: relative !important; }
+.psa { position: absolute !important; }
+
+.search-box {
+  background-color: #fff;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  .el-form-item {
+    margin-bottom: 0;
+  }
+}
+.btns-row {
+  background-color: #fff;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+.table-box {
+  background-color: #fff;
+  padding: 10px 20px;
+  overflow: hidden;
+}
+.table-pagination-box {
+  margin-top: 10px;
+  display: flex;
+  justify-content: end;
+}
+/** 其它 end **/

@@ -1,36 +1,66 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import Counter from '../views/Counter.vue'
-import Todos from '../views/Todos.vue'
-import About from '../views/About.vue'
+
+import vip from './vip';
+import control from './control';
+
+const asyncRoutes = [
+  ...vip,
+  ...control,
+];
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    component: () => import('@/views/Layout/index.vue'),
+    children: [
+      {
+        path: '/home',
+        name: 'home',
+        meta: {
+          title: '首页'
+        },
+        component: () => import('@/views/Home.vue')
+      },
+      ...asyncRoutes
+    ]
   },
   {
-    path: '/counter',
-    name: 'Counter',
-    component: Counter
+    path: '/',
+    children: [
+      {
+        path: '/login',
+        name: 'login',
+        meta: {
+          title: '登录',
+        },
+        component: () => import('@/views/Login/index.vue')
+      }
+    ]
   },
-  {
-    path: '/todos',
-    name: 'Todos',
-    component: Todos
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: About
-  }
-]
+];
+
+
+
+console.log(asyncRoutes)
 
 const router = createRouter({
   history: createWebHistory(),
   routes
-})
+});
+
+router.beforeEach((to, from, next) => {
+  const pathExists = router.getRoutes().some(({ path }) => path === to.path);
+  console.log(pathExists);
+  if (pathExists) {
+    next();
+  } else {
+    const dynamicRoute = asyncRoutes.find(i => i.path === to.path);
+    if (dynamicRoute) {
+      router.addRoute(dynamicRoute);
+      next();
+    }
+  }
+});
 
 export default router
 

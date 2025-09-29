@@ -1,29 +1,24 @@
 <template>
-  <div id="app">
-    <div class="nav">
-      <router-link to="/">首页</router-link>
-      <router-link to="/counter">计数器</router-link>
-      <router-link to="/todos">待办事项</router-link>
-      <router-link to="/about">关于</router-link>
-    </div>
-    
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
+
+const switchLang = () => {
+  locale.value = locale.value === 'zh-CN' ? 'en-US' : 'zh-CN'
+  localStorage.setItem('lang', locale.value)
+}
 
 onMounted(() => {
-  console.log('Vue 3.5 + Pinia + TypeScript Demo 应用已启动')
+  // console.log('Vue 3.5 + Pinia + TypeScript Demo 应用已启动')
 })
 </script>
 
 <style scoped>
-#app {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-}
+
 </style>
+
 
