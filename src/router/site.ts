@@ -1,15 +1,15 @@
-//  会员
+//  总控
 import i18n from '../locales/index';
-
 const routes = [
   {
-    path: '/vip/list',
-    name: 'vipList',
+    path: '/site/configuration',
+    name: 'siteConfiguration',
     meta: {
-      title: i18n.global.t('routes.vip.vipList'),
+      title: i18n.global.t('routes.site.siteConfiguration'),
     },
     component: () => import('@/views/Control/Site/index.vue')
-  }
+  },
+  
 ];
 
 

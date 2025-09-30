@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import vip from './vip';
+import site from './site';
 import control from './control';
 
 const asyncRoutes = [
   ...vip,
+  ...site,
   ...control,
 ];
 

@@ -40,6 +40,12 @@ export default {
     vip: {
       vipList: '会员信息',
     },
+    site: {
+      siteConfiguration: '站点配置',
+      siteRole: '站点角色',
+      siteUser: '站点用户',
+      siteLog: '操作日志',
+    },
     control: {
       controlSite: '站点管理',
       controlMenu: '菜单管理',
