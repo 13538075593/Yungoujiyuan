@@ -57,6 +57,17 @@ export default {
     passwordInputLabel: '密码',
   },
   control: {
+    menu: {
+      menuConditionLabel: '菜单/权限',
+      menuConditionPlaceholder: '请输入名称、路径或权限码',
+      statusConditionLabel: '状态',
+      menuName: '名称',
+      menuPath: '路径',
+      permissionCode: '权限码',
+      menuType: '类型',
+      sort: '排序',
+      parentMenu: '上级菜单'
+    },
     site: {
       button: {
         create: '开设站点'

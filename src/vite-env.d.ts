@@ -4,3 +4,13 @@ declare module '*.vue' {
   const component: Component;
   export default component;
 }
+
+// 支持 import.meta.env 自定义类型
+interface ImportMetaEnv {
+  readonly VITE_API_BASE_URL?: string
+  readonly VITE_ENV?: string
+  readonly VITE_PROXY_TARGET?: string
+}
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}
