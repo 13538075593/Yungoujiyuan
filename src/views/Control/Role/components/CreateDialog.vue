@@ -2,40 +2,52 @@
   <div>
     <el-dialog
       v-model="visible"
-      :title="$t('control.site.createSite')"
+      :title="$t('control.role.createRole')"
       top="10vh"
       width="680px"
       draggable
     >
-      <div class="form-box">
-        <el-form :model="ruleForm" label-position="top">
-          <el-row :gutter="40">
-            <el-col :span="12">
-              <el-form-item :label="$t('control.role.roleName')" prop="siteName">
-                <el-input v-model="ruleForm.siteName" type="text" clearable :placeholder="$t('common.pleaseInput')" />
-              </el-form-item>
-            </el-col>
-            <el-col :span="12">
-              <el-form-item :label="$t('control.role.roleID')" prop="code">
-                <el-input v-model="ruleForm.code" type="text" clearable :placeholder="$t('common.pleaseInput')" />
-              </el-form-item>
-            </el-col>
-            <el-col :span="24">
-              <el-form-item :label="$t('control.role.menuPermission')" prop="code">
-                <el-tree
-                  ref="treeRef"
-                  style="width: 100%;"
-                  :data="treeData"
-                  show-checkbox
-                  node-key="id"
-                  :props="defaultProps"
-                />
-              </el-form-item>
-            </el-col>
-          </el-row>
-    
-        </el-form>
-      </div>
+      <el-form :model="ruleForm" label-position="top">
+        <el-row :gutter="40">
+          <el-col :span="12">
+            <el-form-item :label="$t('control.role.roleName')" prop="siteName">
+              <el-input v-model="ruleForm.siteName" type="text" clearable :placeholder="$t('common.pleaseInput')" />
+            </el-form-item>
+          </el-col>
+          <el-col :span="12">
+            <el-form-item :label="$t('control.role.roleID')" prop="code">
+              <el-input v-model="ruleForm.code" type="text" clearable :placeholder="$t('common.pleaseInput')" />
+            </el-form-item>
+          </el-col>
+        </el-row>
+      </el-form>
+      <!-- tab -->
+      <el-tabs type="border-card">
+        <el-tab-pane :label="$t('control.role.menuPermission')">
+          <div class="tree-box">
+            <el-tree
+              ref="treeRef"
+              style="width: 100%;"
+              :data="treeData"
+              show-checkbox
+              node-key="id"
+              :props="defaultProps"
+            />
+          </div>
+        </el-tab-pane>
+        <el-tab-pane :label="$t('control.role.apiPermission')">
+          <div class="tree-box">
+            <el-tree
+              ref="apiTreeRef"
+              style="width: 100%;"
+              :data="treeData"
+              show-checkbox
+              node-key="id"
+              :props="defaultProps"
+            />
+          </div>
+        </el-tab-pane>
+      </el-tabs>
 
       <template #footer>
         <div class="text-center">
@@ -111,54 +123,8 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-.form-box {
-  max-height: 600px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  .part-title {
-    color: var(--el-color-primary);
-    font-size: 16px;
-    position: relative;
-    padding-left: 10px;
-    line-height: 20px;
-    margin-bottom: 20px;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 2px;
-      bottom: 2px;
-      width: 3px;
-      background-color: var(--el-color-primary);
-    }
-  }
-}
-.avatar-uploader .avatar {
-  width: 100px;
-  height: 100px;
-  display: block;
-}
-</style>
-
-<style>
-.avatar-uploader .el-upload {
-  border: 1px dashed var(--el-border-color);
-  border-radius: 6px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: var(--el-transition-duration-fast);
+.tree-box {
+  height: 320px;
 }
 
-.avatar-uploader .el-upload:hover {
-  border-color: var(--el-color-primary);
-}
-
-.el-icon.avatar-uploader-icon {
-  font-size: 28px;
-  color: #8c939d;
-  width: 100px;
-  height: 100px;
-  text-align: center;
-}
 </style>

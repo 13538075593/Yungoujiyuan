@@ -85,7 +85,7 @@
                   <el-table-column :label="$t('control.site.venueName')" prop="name" />
                   <el-table-column :label="$t('control.site.venueRates')">
                     <template #default="{ row }">
-                      <el-input-number v-model="row.rate" :max="99.9" :precision="1">
+                      <el-input-number v-model="row.rate" :min="0.1" :max="99.9" :precision="1">
                         <template #suffix>%</template>
                       </el-input-number>
                     </template>
@@ -237,11 +237,7 @@ defineExpose({
     }
   }
 }
-.avatar-uploader .avatar {
-  width: 100px;
-  height: 100px;
-  display: block;
-}
+
 </style>
 
 <style>

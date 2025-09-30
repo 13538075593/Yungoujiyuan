@@ -6,18 +6,33 @@ export default {
     all: '全部',
     yes: '是',
     no: '否',
+    success: '成功',
+    fail: '失败',
     pleaseInput: '请输入',
+    pleaseSelect: '请选择',
     updateTime: '修改时间',
     updater: '修改人',
     status: '状态',
     operation: '操作',
+    startTime: '开始时间',
+    startDate: '开始日期',
+    endTime: '结束时间',
+    endDate: '结束日期',
+    to: '至',
     button: {
       confirm: '确认',
       cancel: '取消',
       query: '查询',
       reset: '重置',
       create: '新增',
-      edit: '编辑'
+      edit: '编辑',
+      disabled: '停用',
+      enable: '启用',
+      del: '删除',
+      login: '登录',
+      control: '管控',
+      detail: '详情',
+      safeguard: '维护',
     },
   },
   // 路由title
@@ -27,7 +42,11 @@ export default {
     },
     control: {
       controlSite: '站点管理',
-      controlRole: '总控角色'
+      controlMenu: '菜单管理',
+      controlRole: '总控角色',
+      controlUser: '总控用户',
+      controlLog: '操作日志',
+      controlVenue: '场馆管理'
     }
   },
 
@@ -80,7 +99,62 @@ export default {
       createRole: '新增角色',
       editRole: '编辑角色',
       menuPermission: '菜单权限',
-      
+      apiPermission: '接口权限',
+    },
+    user: {
+      userConditionLabel: '用户',
+      userConditionPlaceholder: '请输入名称或账户',
+      userName: '用户名称',
+      account: '登录账号',
+      role: '角色',
+      recentLoginTime: '最近登录时间',
+      accessRestriction: '访问限制',
+      createUser: '新增用户',
+      editUser: '编辑用户',
+      nameLabel: '名称',
+      accountLabel: '账号',
+      passwordLabel: '密码',
+      whiteListDialogTitle: '白名单',
+      button: {
+        whiteList: '白名单'
+      }
+    },
+    log: {
+      operationTimeConditionLabel: '操作时间',
+      userNameConditionLabel: '用户名称',
+      userNameConditionPlaceholder: '请输入名称或账户',
+      siteConditionLabel: '所属站点',
+      siteConditionPlaceholder: '请输入名称或代号',
+      operationTypeConditionLabel: '操作类型',
+      operationResultConditionLabel: '操作结果',
+      nameOfAffiliatedSite: '所属站点名',
+      operationObject: '操作对象',
+      operationID: '操作ID',
+      failMessage: '错误信息',
+      ip: 'IP',
+      ipCity: 'IP所属城市',
+      deviceNumber: '终端设备号',
+      detailsDialogTitle: '详情日志',
+      siteCode: '站点代号',
+      userAccount: '用户账号',
+      requestPayload: '请求参数'
+    },
+    venue: {
+      venueNameConditionLabel: '场馆名称',
+      venueNameConditionPlaceholder: '请输入场馆名称',
+      venueStatusCondotionLabel: '场馆状态',
+      icon: 'Icon',
+      allGameCount: '全部游戏数量',
+      enableGameCount: '启用游戏数量',
+      connectionTime: '接入时间',
+      venueRates: '场馆费率',
+      venueRatesPlaceholder: '请输入0.1~99.9之间的值',
+      venueStatus: '场馆状态',
+      editDialogTitle: '编辑',
+      gameName: '游戏名称',
+      gameID: '游戏ID',
+      adaptTerminal: '适配终端',
+      gameGenre: '游戏类型'
     }
   }
 }
